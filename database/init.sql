@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, paycard, hotelsinfo,review CASCADE;
+DROP TABLE IF EXISTS users, paycard, hotelsinfo,reviews CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -32,13 +32,14 @@ CREATE TABLE paycard(
    city VARCHAR (255),
    description TEXT
  );
- CREATE TABLE review(
+ CREATE TABLE reviews(
     id SERIAL PRIMARY KEY,
     user_id integer references users(id),
     title VARCHAR(20),
     content TEXT,
     date timestamp
  );
+ 
  INSERT INTO hotelsinfo(hotel_name, image, review, score, city, description) VALUES ('Cherry Hotel','https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/d3/9d/b1/cherry-hotel.jpg?w=700&h=-1&s=1','Very Good','8.4','Ngu Hanh Son','a business hotel belonging to the Cherry Group, which is located at 92 Ngo Thi Nham, Hai Ba Trung, Hanoi, Vietnam.');
  INSERT INTO hotelsinfo(hotel_name, image, review, score, city, description) VALUES ('Lagun Palas','https://cf.bstatic.com/xdata/images/hotel/max1024x768/314060736.jpg?k=e82406ed7e9cfca4ce9bcfb5634250feeefebac77c0ec2956d0c46b9bb7caf91&o=&hp=1', 'Wonderful','9.3','Yalova','Located in Altınova and with Yuruyen Kosk reachable within 19.3 km, Lagun Palas has express check-in and check-out, non-smoking rooms, a shared lounge, free WiFi throughout the property and a garden. Featuring family rooms, this property also provides guests with a terrace. The property provides a 24-hour front desk, room service and currency exchange for guests.');
  INSERT INTO hotelsinfo(hotel_name, image, review, score, city, description) VALUES ('Phi Hotel Astoria','https://cf.bstatic.com/xdata/images/hotel/max1024x768/80580386.jpg?k=855d80df10d1f0152aec81a6c41e47a25f4f7c0907ff874c5242ff6f61ac82b0&o=&hp=1','Excellent','8.8','Susegana','The 4-star Phi Hotel Astoriais set in a 19th-century building located in Susegana, overlooking the surrounding hills. Surrounded by a large garden, it offers free parking and free Wi-Fi.');
