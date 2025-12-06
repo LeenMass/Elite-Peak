@@ -1,4 +1,4 @@
-const searchbar=require('./assest/search')
+const searchbar = require('./assest/search')
 function layout(content) {
   return (`
       <!DOCTYPE html>
@@ -30,7 +30,7 @@ function layout(content) {
 
 function hotels(email, data) {
 
-  return layout(/*html */ `
+  return layout(`
   <h3> hi ${email}</h3>
   <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
   <ul id="myUL">
@@ -43,7 +43,8 @@ function hotels(email, data) {
 }
 function logIn() {
   return layout(`
-      <h1>Log in to your account</h1>
+      <h1>Log In </h1>
+      <div>
       <form   method='post'>
         <label> Email:</label>
         <input id="mail" type="email" name="email" required></br></br>
@@ -51,7 +52,7 @@ function logIn() {
         <input id="password" type="password" name="password" ></br></br>
         <button type="submit">Log in</button>
         <p>didn't have an account? <a href='/signup'>signup</a></p>
-      </form>
+      </form></div>
     `);
 }
 function SignUp() {
@@ -78,7 +79,7 @@ function SignUp() {
 }
 
 function newPost() {
-  return layout(/*html */ `
+  return layout(`
     <h1>Add a new post</h1>
     <form  method="POST">
       <label for="title">
