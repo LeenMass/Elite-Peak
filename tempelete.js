@@ -44,7 +44,7 @@ function hotels(email, data) {
 function logIn() {
   return layout(`
       <h1>Log In </h1>
-      <div>
+      <div class='logInForm'>
       <form   method='post'>
         <label> Email:</label>
         <input id="mail" type="email" name="email" required></br></br>
